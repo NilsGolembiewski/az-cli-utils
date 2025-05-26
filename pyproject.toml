@@ -1,0 +1,21 @@
+[project]
+name = "az-cli-utils"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Nils Golembiewski",email = "nilsgolembiewski@techonomy.nl"}
+]
+readme = "README.md"
+requires-python = ">=3.10,<3.14"
+dependencies = [
+    "click (>=8.2.1,<9.0.0)",
+    "azure-keyvault-secrets (>=4.9.0,<5.0.0)"
+]
+
+[tool.poetry.scripts]
+create-az-secrets = "az_cli_utils.create_or_update_azure_keyvault_secrets:main"
+delete-az-secrets = "az_cli_utils.delete_azure_keyvault_secrets:main"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
