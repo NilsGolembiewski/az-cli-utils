@@ -14,8 +14,8 @@ dependencies = [
 ]
 
 [tool.poetry.scripts]
-create-az-secrets = "az_cli_utils.create_or_update_azure_keyvault_secrets:main"
-delete-az-secrets = "az_cli_utils.delete_azure_keyvault_secrets:main"
+az-secrets-create = "az_cli_utils.create_or_update_azure_keyvault_secrets:main"
+az-secrets-delete = "az_cli_utils.delete_azure_keyvault_secrets:main"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]

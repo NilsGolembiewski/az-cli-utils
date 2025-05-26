@@ -27,7 +27,7 @@ pip install .
 ### Upload environment variables as secrets
 
 ```sh
-poetry run create-az-secrets --vault-name <vault-name> ENV_VAR1 ENV_VAR2 ...
+poetry run az-secrets-create --vault-name <vault-name> ENV_VAR1 ENV_VAR2 ...
 ```
 - Each ENV_VAR must be set in your environment.
 - Secrets will be named as the environment variable, lowercased and with underscores replaced by hyphens.
@@ -35,7 +35,7 @@ poetry run create-az-secrets --vault-name <vault-name> ENV_VAR1 ENV_VAR2 ...
 ### Delete secrets from Key Vault
 
 ```sh
-poetry run delete-az-secrets --vault-name <vault-name> secret-name-1 secret-name-2 ...
+poetry run az-secrets-delete --vault-name <vault-name> secret-name-1 secret-name-2 ...
 ```
 
 ## Azure Authentication
