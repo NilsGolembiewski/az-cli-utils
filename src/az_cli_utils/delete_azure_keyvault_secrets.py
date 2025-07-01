@@ -3,9 +3,12 @@ import click
 from azure.identity import DefaultAzureCredential
 from azure.keyvault.secrets import SecretClient
 
+
 @click.command()
-@click.option('--vault-name', '-v', prompt=True, help='Azure Key Vault name (without https://)')
-@click.argument('secrets', nargs=-1)
+@click.option(
+    "--vault-name", "-v", prompt=True, help="Azure Key Vault name (without https://)"
+)
+@click.argument("secrets", nargs=-1)
 def main(vault_name, secrets):
     """
     Deletes the given SECRETS from the specified Azure Key Vault.
@@ -26,5 +29,6 @@ def main(vault_name, secrets):
         except Exception as e:
             print(f"Failed to delete secret '{secret_name}': {e}")
 
+
 if __name__ == "__main__":
-    main() 
+    main()
