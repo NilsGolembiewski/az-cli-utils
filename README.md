@@ -1,10 +1,11 @@
 # az-cli-utils
 
-A set of simple CLI utilities for managing Azure Key Vault secrets using Python.
+A set of simple CLI utilities for managing Azure Key Vault and Storage Account resources using Python.
 
 ## Features
 - Upload environment variables as secrets to Azure Key Vault
 - Delete secrets from Azure Key Vault
+- Whitelist current public IP for Azure Storage Accounts
 
 ## Installation
 
@@ -37,6 +38,14 @@ poetry run az-secrets-create --vault-name <vault-name> ENV_VAR1 ENV_VAR2 ...
 ```sh
 poetry run az-secrets-delete --vault-name <vault-name> secret-name-1 secret-name-2 ...
 ```
+
+### Whitelist public IP for Azure Storage
+
+```sh
+poetry run az-storage-whitelist-ip --resource-group <resource-group> --account-name <storage-account-name>
+```
+- Fetches your current public IPv4 address and adds it to the storage account's network rule whitelist.
+- Uses `az` CLI under the hood. Make sure it's installed and you're authenticated.
 
 ## Azure Authentication
 

@@ -10,13 +10,15 @@ requires-python = ">=3.10"
 dependencies = [
     "click (>=8.2.1,<9.0.0)",
     "azure-keyvault-secrets (>=4.9.0,<5.0.0)",
-    "azure-identity (>=1.23.0,<2.0.0)"
+    "azure-identity (>=1.23.0,<2.0.0)",
+    "requests (>=2.31.0,<3.0.0)"
 ]
 
 [tool.poetry.scripts]
 az-secrets-create = "az_cli_utils.create_or_update_azure_keyvault_secrets:main"
 az-secrets-delete = "az_cli_utils.delete_azure_keyvault_secrets:main"
 az-secrets-create-from-file = "az_cli_utils.create_or_update_azure_keyvault_secret_from_file:main"
+az-storage-whitelist-ip = "az_cli_utils.add_public_ip_to_storage_whitelist:main"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
